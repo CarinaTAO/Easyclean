@@ -1,0 +1,41 @@
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Header from './components/General/Header';
+import Footer from './components/General/Footer';
+import TaskListPage from './pages/TaskListPage';
+
+
+import TaskCard from './components/TaskCard';
+import TaskDetails from './components/TaskDetails';
+import Modal from './components/Modal';
+function App() {
+  return (
+    /*  <Switch>
+      <Route path="/stella" exact component={Stella} />
+     </Switch> */
+    <div>
+      <div className="ListPage">
+        <TaskListPage />
+      </div>
+      <Header />
+      <Footer />
+    </div>
+    <Router>
+      <Switch>
+        <Route path="/stella" exact component={TaskCard} />
+        <Route path="/td" exact component={TaskDetails} />
+        <Route path="/md" exact component={Modal} />
+      </Switch>
+    </Router>
+   /* <div>
+    <Header />
+    <Footer />
+   </div> */
+
+
+  );
+}
+
+export default App;
